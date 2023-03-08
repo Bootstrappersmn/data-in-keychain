@@ -116,7 +116,8 @@ public extension Data {
         if let error { throw error }
     }
     
-    ///
+    /// This function will attempt to delete any data stored for the given `uniqueKey`.
+    /// It will not throw any error if no data is found.
     @MainActor
     static func deleteFromKeychain (uniqueKey: String) throws {
         
@@ -137,6 +138,19 @@ public extension Data {
                 .asOSError
         
         ///
-        if let error { throw error }
+        if let error {
+            
+            ///
+            if error == .errSecItemNotFound {
+                
+                ///
+                do { /* nothing */ } // because this function is documented to not throw an error if no data was found.
+                
+            } else {
+                
+                ///
+                throw error
+            }
+        }
     }
 }

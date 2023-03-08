@@ -18,7 +18,7 @@ let package = Package(
         ///
         .package(
             url: "https://github.com/bootstrappersmn/OSErrorModule",
-            from: "0.1.0"
+            from: "0.1.1"
         ),
     ],
     targets: [
