@@ -1,3 +1,3 @@
 # data-in-keychain
 
-A description of this package.
+This module adds methods to the `Data` type to facilitate easy persisting, fetching, and deleting of `Data` in the keychain.
